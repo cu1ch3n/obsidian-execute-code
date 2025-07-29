@@ -197,7 +197,7 @@ function createButton(): HTMLButtonElement {
  */
 function runCode(cmd: string, cmdArgs: string, ext: string, block: CodeBlockContext, options?: { shell?: boolean; transform?: (code: string) => string; }) {
     const useShell: boolean = (options?.shell) ? options.shell : false;
-    if (options?.transform) block.injectedCode = options.transform(block.injectCode);
+    if (options?.transform) block.injectedCode = options.transform(block.injectedCode);
     if (!useShell) block.outputter.startBlock();
 
     const executor = block.executors.getExecutorFor(block.markdownFile, block.language, useShell);
